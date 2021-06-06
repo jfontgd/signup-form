@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+main {
+  height: 100vh;
+  background: url('/images/bg-intro-desktop.png'), hsl(0, 100%, 74%);
+  display: flex;
+}
+.hero {
+  width: 80%;
+  margin: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.offer {
+  background: hsl(248, 32%, 49%);
+  height: 7rem;
+  width: 100%;
+  border-radius: 10px;
+  margin: 3rem 0;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.8rem;
+  box-shadow: 1px 8px 0 rgba($color: #000000, $alpha: 0.2);
+
+  span {
+    font-weight: 600;
+  }
+}
+.left-box {
+  display: flex;
+  flex: 1 1 40rem;
+  flex-direction: column;
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+}
+.right-box {
+  display: flex;
+  flex: 1 1 40rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+form {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 2rem 8rem;
+  input {
+    width: 90%;
+    height: 6rem;
+    border: 1px solid hsl(246, 25%, 77%);
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    padding: 1rem 3rem;
+    position: relative;
+  }
+}
+.error-icon {
+  visibility: hidden;
+}
+.error-message {
+  visibility: hidden;
+}
+button {
+  background: hsl(154, 59%, 51%);
+  border: none;
+  width: 90%;
+  height: 6rem;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  box-shadow: 1px 5px 0 hsla(154, 66%, 35%, 0.438);
+  cursor: pointer;
+}
+button:hover {
+  background: hsl(154, 74%, 74%);
+}
+::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.form-wrapper {
+  background: white;
+  width: 100%;
+  flex: 2;
+  border-radius: 10px;
+  margin: 0 3rem 3rem;
+  box-shadow: 1px 8px 0 rgba($color: #000000, $alpha: 0.2);
+  position: relative;
+}
+.terms {
+  position: absolute;
+  bottom: 35px;
+  left: 90px;
+  color: hsl(246, 25%, 77%);
+  font-size: 1.2rem;
+  span {
+    color: hsl(0, 100%, 74%);
+    font-weight: 700;
+  }
+}
