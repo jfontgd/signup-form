@@ -24,22 +24,29 @@
             </div>
             <div class="form-wrapper">
                 <form action="#" class="form1">
-                    <input type="text" name="first name" id="name" placeholder="First Name">
+                    <div class="form-control">
+                      <input class="" type="text" name="first name" id="fname" placeholder="First Name">
                         <img class="error-icon" src="/images/icon-error.svg" alt="">
-                    <p class="error-message f">First name cannot be empty</p>
-                    <input type="text" name="last name" id="lastname" placeholder="Last Name">
+                        <small class="error-message"><em>First name cannot be empty</em></small>
+                    </div>
+                    <div class="form-control">
+                      <input type="text" name="last name" id="lname" placeholder="Last Name">
+                      <img class="error-icon" src="/images/icon-error.svg" alt="">
+                      <small class="error-message"><em>Last name cannot be empty</em> </small>
+                    </div>
+                    <div class="form-control">
+                      <input type="email" name="email" id="email" placeholder="Email Address">
                         <img class="error-icon" src="/images/icon-error.svg" alt="">
-                    <p class="error-message l">Last name cannot be empty</p>
-                    <input type="email" name="email" id="email" placeholder="Email Address">
-                        <img class="error-icon" src="/images/icon-error.svg" alt="">
-                    <p class="error-message e">Looks like this is not an email</p>
-                    <input type="password" name="password" id="password" placeholder="Password">
-                        <img class="error-icon" src="/images/icon-error.svg" alt="">
-                    <p class="error-message p">Password cannot be empty</p>
-                    <button type="submit" value="submit">Claim your free trial</button>
-                </form>
-                <p class="terms"> By clicking the button, you are agreeing to our <span>Terms and Services </span></p>
-               
+                        <small class="error-message"><em>Looks like this is not an email</em> </small>
+                    </div>
+                    <div class="form-control">
+                      <input type="password" name="password" id="password" placeholder="Password">
+                      <img class="error-icon" src="/images/icon-error.svg" alt="">
+                      <small class="error-message"><em>Password cannot be empty</em></small>
+                    </div> 
+                      <button type="submit" value="submit">Claim your free trial</button>
+                      <p class="terms"> By clicking the button, you are agreeing to our <span>Terms and Services </span></p>                
+                </form>              
             </div>       
         </div>
     </div>
@@ -47,12 +54,13 @@
 
 
  
-  
+<!--   
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </p>
-  </footer>
+  </footer> -->
+  <script src="script.js"></script>
 </body>
 </html>

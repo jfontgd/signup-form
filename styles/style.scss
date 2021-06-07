@@ -62,27 +62,34 @@ form {
   min-height: 100%;
   flex-direction: column;
   align-items: center;
-  margin: 5rem 2rem 8rem;
-  input {
-    width: 90%;
-    height: 6rem;
-    border: 1px solid hsl(246, 25%, 77%);
-    border-radius: 5px;
-    margin-bottom: 1.5rem;
-    padding: 1rem 3rem;
-    position: relative;
-  }
+  padding: 5rem 5rem;
 }
-.error-icon {
-  visibility: hidden;
+input {
+  width: 100%;
+  height: 6rem;
+  border: 1px solid hsl(246, 25%, 77%);
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  padding: 1rem 3rem;
+  outline: none;
 }
-.error-message {
-  visibility: hidden;
+input:focus {
+  outline: none;
+  border: 1px solid hsl(248, 32%, 49%);
+}
+.form-control.error input {
+  border: 2px solid hsl(0, 100%, 74%);
+}
+.form-control.error.error-icon {
+  visibility: visible;
+}
+.form-control.error.error-message {
+  visibility: visible;
 }
 button {
   background: hsl(154, 59%, 51%);
   border: none;
-  width: 90%;
+  width: 100%;
   height: 6rem;
   border-radius: 5px;
   color: white;
@@ -108,14 +115,32 @@ button:hover {
   border-radius: 10px;
   margin: 0 3rem 3rem;
   box-shadow: 1px 8px 0 rgba($color: #000000, $alpha: 0.2);
+}
+.form-control {
+  width: 100%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   position: relative;
 }
-.terms {
+.error-icon {
   position: absolute;
-  bottom: 35px;
-  left: 90px;
+  top: 17px;
+  right: 10px;
+  visibility: hidden;
+}
+small {
+  font-size: 1.3rem;
+  color: hsl(0, 100%, 74%);
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  font-weight: 600;
+  visibility: hidden;
+}
+.terms {
   color: hsl(246, 25%, 77%);
   font-size: 1.2rem;
+  margin: 3rem 3rem 0;
   span {
     color: hsl(0, 100%, 74%);
     font-weight: 700;
