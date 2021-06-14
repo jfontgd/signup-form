@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+$box-shadow: 1px 8px 0
+  rgba(
+    $color: #000000,
+    $alpha: 0.2,
+  );
+$green: 1px 5px 0 hsla(154, 87%, 36%, 0.87);
+$hover: hsl(154, 74%, 74%);
+$background: hsl(0, 100%, 74%);
+$background2: hsl(248, 32%, 49%);
+
 * {
   margin: 0;
   padding: 0;
@@ -12,137 +22,165 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 main {
-  height: 100vh;
-  background: url('/images/bg-intro-desktop.png'), hsl(0, 100%, 74%);
-  display: flex;
+  background: url('/images/bg-intro-desktop.png'), $background;
+  background-size: cover;
 }
 .hero {
-  width: 80%;
+  min-height: 100vh;
+  width: 85%;
   margin: auto;
-  color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.offer {
-  background: hsl(248, 32%, 49%);
-  height: 7rem;
-  width: 100%;
-  border-radius: 10px;
-  margin: 3rem 0;
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 1.8rem;
-  box-shadow: 1px 8px 0 rgba($color: #000000, $alpha: 0.2);
-
-  span {
-    font-weight: 600;
-  }
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .left-box {
-  display: flex;
+  color: white;
   flex: 1 1 40rem;
-  flex-direction: column;
+  padding: 5rem;
   h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
   p {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 .right-box {
-  display: flex;
   flex: 1 1 40rem;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  padding: 5rem;
 }
-form {
-  display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  align-items: center;
-  padding: 5rem 5rem;
-}
-input {
-  width: 100%;
+.offer {
+  background: $background2;
+  color: white;
   height: 6rem;
-  border: 1px solid hsl(246, 25%, 77%);
-  border-radius: 5px;
-  margin-bottom: 1.5rem;
-  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  border-radius: 7px;
+  font-size: 1.7rem;
+  font-weight: 300;
+  box-shadow: $box-shadow;
+  span {
+    font-weight: 700;
+  }
+}
+.form-wrapper {
+  background: white;
+  padding: 4rem;
+  border-radius: 7px;
+  box-shadow: $box-shadow;
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.form-control {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+.form-control input {
+  width: 100%;
+  padding: 1.8rem 3rem;
+  border-radius: 7px;
+  border: 1.5px solid lightgray;
   outline: none;
 }
-input:focus {
-  outline: none;
-  border: 1px solid hsl(248, 32%, 49%);
+.form-control input:focus {
+  border: 1.5px solid hsl(249, 10%, 26%);
+}
+::placeholder {
+  color: rgb(133, 126, 126);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.form-control input:focus::placeholder {
+  color: transparent;
+}
+button {
+  margin-bottom: 1rem;
+  height: 4rem;
+  border-radius: 7px;
+  border: none;
+  background: hsl(154, 59%, 51%);
+  color: white;
+  text-transform: uppercase;
+  box-shadow: $green;
+}
+button:hover {
+  background: $hover;
+}
+.terms {
+  text-align: center;
+  color: lightgray;
+  font-size: 1.3rem;
+  span {
+    color: $background;
+    font-weight: 700;
+  }
+}
+.error-icon {
+  position: absolute;
+  top: 13px;
+  right: 25px;
+  opacity: 0;
+}
+small {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: $background;
+  font-weight: 600;
+  opacity: 0;
 }
 .form-control.error input {
   border: 2px solid hsl(0, 100%, 74%);
 }
-.form-control.error.error-icon {
-  visibility: visible;
+// Media Queries------------------------------
+@media screen and (max-width: 1080px) {
+  .left-box,
+  .right-box {
+    flex: 1 1 50rem;
+  }
+  .left-box {
+    padding-top: 10rem;
+    padding-bottom: 0;
+    text-align: center;
+  }
 }
-.form-control.error.error-message {
-  visibility: visible;
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 55%;
+  }
+  .hero {
+    width: 97%;
+    margin: auto;
+  }
+  .left-box {
+    padding-bottom: 4rem;
+  }
+  .offer {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  .form-wrapper {
+    padding: 2.5rem;
+  }
 }
-button {
-  background: hsl(154, 59%, 51%);
-  border: none;
-  width: 100%;
-  height: 6rem;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 2px;
-  box-shadow: 1px 5px 0 hsla(154, 66%, 35%, 0.438);
-  cursor: pointer;
-}
-button:hover {
-  background: hsl(154, 74%, 74%);
-}
-::placeholder {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-.form-wrapper {
-  background: white;
-  width: 100%;
-  flex: 2;
-  border-radius: 10px;
-  margin: 0 3rem 3rem;
-  box-shadow: 1px 8px 0 rgba($color: #000000, $alpha: 0.2);
-}
-.form-control {
-  width: 100%;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-.error-icon {
-  position: absolute;
-  top: 17px;
-  right: 10px;
-  visibility: hidden;
-}
-small {
-  font-size: 1.3rem;
-  color: hsl(0, 100%, 74%);
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  font-weight: 600;
-  visibility: hidden;
-}
-.terms {
-  color: hsl(246, 25%, 77%);
-  font-size: 1.2rem;
-  margin: 3rem 3rem 0;
-  span {
-    color: hsl(0, 100%, 74%);
-    font-weight: 700;
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 53%;
+  }
+  .hero {
+    width: 100%;
+    margin: 0 5px;
+  }
+  .offer {
+    padding: 5rem 7rem;
+    text-align: center;
+  }
+  button {
+    padding: 2.5rem 3.5rem 4.5rem;
   }
 }
